@@ -527,6 +527,9 @@
 
     <!-- Contact Form JavaScript -->
     <script src="{{ url_for('static', filename='js/jqBootstrapValidation.js') }}"></script>
+    <script type=text/javascript>
+          $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
     <script src="{{ url_for('static', filename='js/contact_me.js') }}"></script>
 
     <!-- Custom Theme JavaScript -->

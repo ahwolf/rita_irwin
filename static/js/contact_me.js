@@ -21,14 +21,15 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "static/js/contact_me.php",
+                url: $SCRIPT_ROOT + "/_contact",
                 type: "POST",
-                data: {
+                data: JSON.stringify({
                     name: name,
                     phone: phone,
                     email: email,
                     message: message
-                },
+                }, null, '\t'),
+                contentType: 'application/json;charset=UTF-8',
                 cache: false,
                 success: function() {
                     // Enable button & show success message
